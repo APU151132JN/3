@@ -39,7 +39,7 @@ addzhanglitorque2(float* __restrict__ tx, float* __restrict__ ty, float* __restr
     float pol   = amul(pol_, pol_mul, i);
     float invMs = inv_Msat(Ms_, Ms_mul, i);
     float b = invMs * PREFACTOR / (1.0f + xi*xi);
-    float3 J = pol*vmul(jx_, jy_, jz_, jx_mul, jy_mul, jz_mul, i);
+    float3 J = dss*pol*vmul(jx_, jy_, jz_, jx_mul, jy_mul, jz_mul, i);
 
     float3 hspin = make_float3(0.0f, 0.0f, 0.0f); // (u·∇)m
     if (J.x != 0.0f) {
