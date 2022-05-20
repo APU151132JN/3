@@ -27,7 +27,7 @@ addslonczewskitorque2(float* __restrict__ tx, float* __restrict__ ty, float* __r
     if (i < N) {
 
         float3 m = make_float3(mx[i], my[i], mz[i]);
-        float  J = amul(jz_, jz_mul, i);
+        float  J = dss*amul(jz_, jz_mul, i);
         float3 p = normalized(vmul(px_, py_, pz_, px_mul, py_mul, pz_mul, i));
         float  Ms           = amul(Ms_, Ms_mul, i);
         float  alpha        = amul(alpha_, alpha_mul, i);
