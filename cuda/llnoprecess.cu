@@ -14,7 +14,7 @@ llnoprecess(float* __restrict__  tx, float* __restrict__  ty, float* __restrict_
         float3 H = {hx[i], hy[i], hz[i]};
 
         float3 mxH = cross(m, H);
-        float3 torque = -cross(m, mxH);
+        float3 torque = cross(m, mxH);
 
         tx[i] = torque.x;
         ty[i] = torque.y;
