@@ -18,7 +18,7 @@ lltorque2(float* __restrict__  tx, float* __restrict__  ty, float* __restrict__ 
 
         float3 mxH = cross(m, H);
         float gilb = -1.0f / (1.0f + alpha * alpha);
-        float3 torque = gilb * (mxH - alpha * cross(m, mxH));
+        float3 torque = gilb * (mxH - 100*alpha * cross(m, mxH));
 
         tx[i] = torque.x;
         ty[i] = torque.y;
